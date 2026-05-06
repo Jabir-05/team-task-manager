@@ -11,7 +11,7 @@ const statusLabels = {
 
 const blankProject = { name: "", description: "" };
 const blankTask = { title: "", description: "", assigneeId: "", dueDate: "", status: "TODO" };
-const apiBase = import.meta.env.DEV ? "http://localhost:9090/api" : "/api";
+const apiBase = import.meta.env.DEV ? "http://localhost:8080/api" : "/api";
 
 function apiClient(token, onLogout) {
   return async (path, options = {}) => {
