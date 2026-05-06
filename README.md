@@ -1,95 +1,87 @@
-````md
-# Team Task Manager 🚀
+# Team Task Manager
 
-A modern full-stack project management application that helps teams create projects, assign tasks, manage members, and track work progress efficiently with secure role-based access control.
+> A full-stack project management application for teams to create projects, assign tasks, manage members, and track progress with secure role-based access control.
 
-## 🌐 Live Demo
+---
 
-### 🚀 Live Application
-[Open Live Project](https://team-task-manager-production-ef81.up.railway.app)
+## 🔗 Links
 
-### 📂 GitHub Repository
-[View GitHub Repository](https://github.com/Jabir-05/team-task-manager)
+| | |
+|---|---|
+| **Live Application** | [team-task-manager-production-ef81.up.railway.app](https://team-task-manager-production-ef81.up.railway.app) |
+| **GitHub Repository** | [github.com/Jabir-05/team-task-manager](https://github.com/Jabir-05/team-task-manager) |
+
+---
 
 ## ✨ Features
 
-### 🔐 Authentication & Authorization
-- Secure Signup & Login System
-- JWT-based Authentication
-- Password Encryption using bcrypt
-- Role-Based Access Control (Admin / Member)
+### 🔐 Authentication & Security
+- JWT-based authentication with secure signup and login
+- Password hashing with bcrypt
+- Role-based access control (Admin / Member)
 
 ### 📁 Project Management
 - Create and manage projects
 - Add or remove team members
-- Manage project responsibilities
-- View project details and members
+- Control project access and responsibilities
 
 ### ✅ Task Management
-- Create and assign tasks
-- Update task status
-- Track overdue tasks
-- Delete tasks (Admin only)
-- Monitor project workflow
+- Create, assign, and update tasks
+- Track task status (Pending, In Progress, Completed, Overdue)
+- Admin-only task deletion
+- Real-time workflow tracking
 
 ### 📊 Dashboard & Analytics
-- Total Tasks Overview
-- Pending Tasks
-- Completed Tasks
-- In Progress Tasks
-- Overdue Task Monitoring
+- Overview of total, pending, in-progress, completed, and overdue tasks
+- Role-specific dashboard views for Admins and Members
 
-### 🛡️ Backend & Database
-- RESTful API Architecture
-- Prisma ORM Integration
-- PostgreSQL Database
-- Input Validation using Zod
-- Relational Database Models
+---
 
 ## 🛠️ Tech Stack
 
-| Technology | Usage |
-|------------|-------|
-| React.js | Frontend UI |
-| Vite | Frontend Build Tool |
-| Node.js | Backend Runtime |
-| Express.js | Backend Framework |
-| Prisma ORM | Database ORM |
-| PostgreSQL | Database |
-| JWT | Authentication |
-| bcryptjs | Password Hashing |
-| Railway | Deployment |
+| Layer | Technology |
+|-------|------------|
+| Frontend | React.js + Vite |
+| Backend | Node.js + Express.js |
+| Database | PostgreSQL + Prisma ORM |
+| Auth | JWT + bcryptjs |
+| Validation | Zod |
+| Deployment | Railway |
+
+---
 
 ## 📂 Project Structure
 
-```bash
-├── prisma
-├── server
-├── src
-├── Screenshots
-├── public
-├── package.json
-└── README.md
 ```
+team-task-manager/
+├── prisma/         # Database schema and migrations
+├── server/         # Express backend (routes, controllers, middleware)
+├── src/            # React frontend
+├── public/         # Static assets
+├── Screenshots/    # App screenshots
+└── package.json
+```
+
+---
 
 ## ⚙️ Local Setup
 
-### 1️⃣ Clone Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Jabir-05/team-task-manager.git
 cd team-task-manager
 ```
 
-### 2️⃣ Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3️⃣ Configure Environment Variables
+### 3. Configure Environment Variables
 
-Create a `.env` file and add:
+Create a `.env` file in the root directory:
 
 ```env
 DATABASE_URL="postgresql://taskmanager:taskmanager@localhost:5432/team_task_manager?schema=public"
@@ -97,109 +89,111 @@ JWT_SECRET="your-secret-key"
 PORT=8080
 ```
 
-### 4️⃣ Start PostgreSQL
+### 4. Start PostgreSQL via Docker
 
 ```bash
 docker compose up -d
 ```
 
-### 5️⃣ Run Prisma Migrations
+### 5. Run Prisma Migrations
 
 ```bash
 npm run db:dev
 ```
 
-### Optional Seed Data
+Optionally seed the database with demo data:
 
 ```bash
 npm run db:seed
 ```
 
-### 6️⃣ Start Development Server
+### 6. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-### Frontend URL
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:5173 |
+| Backend | http://localhost:8080 |
 
-```text
-http://localhost:5173
-```
+---
 
-### Backend URL
+## 👤 Demo Accounts
 
-```text
-http://localhost:8080
-```
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | admin@example.com | Password123! |
+| Member | member@example.com | Password123! |
 
-## 👨‍💻 Demo Accounts
+---
 
-### 🔑 Admin Account
-
-```text
-Email: admin@example.com
-Password: Password123!
-```
-
-### 👤 Member Account
-
-```text
-Email: member@example.com
-Password: Password123!
-```
-
-## 📡 API Endpoints
+## 📡 API Reference
 
 ### Authentication
-- `POST /api/auth/signup`
-- `POST /api/auth/login`
+| Method | Endpoint |
+|--------|----------|
+| POST | `/api/auth/signup` |
+| POST | `/api/auth/login` |
 
-### User
-- `GET /api/me`
-- `GET /api/users`
+### Users
+| Method | Endpoint |
+|--------|----------|
+| GET | `/api/me` |
+| GET | `/api/users` |
 
 ### Dashboard
-- `GET /api/dashboard`
+| Method | Endpoint |
+|--------|----------|
+| GET | `/api/dashboard` |
 
 ### Projects
-- `GET /api/projects`
-- `POST /api/projects`
-- `GET /api/projects/:id`
+| Method | Endpoint |
+|--------|----------|
+| GET | `/api/projects` |
+| POST | `/api/projects` |
+| GET | `/api/projects/:id` |
 
 ### Team Members
-- `POST /api/projects/:projectId/members`
+| Method | Endpoint |
+|--------|----------|
+| POST | `/api/projects/:projectId/members` |
 
 ### Tasks
-- `POST /api/projects/:projectId/tasks`
-- `PATCH /api/tasks/:id`
-- `DELETE /api/tasks/:id`
+| Method | Endpoint |
+|--------|----------|
+| POST | `/api/projects/:projectId/tasks` |
+| PATCH | `/api/tasks/:id` |
+| DELETE | `/api/tasks/:id` |
+
+---
 
 ## 🔑 Role Permissions
 
-### 👑 Admin
-- Create projects
-- Manage members
-- Assign tasks
-- Delete tasks
-- Access all project details
+| Permission | Admin | Member |
+|-----------|:-----:|:------:|
+| Create projects | ✅ | ❌ |
+| Manage members | ✅ | ❌ |
+| Assign tasks | ✅ | ❌ |
+| Delete tasks | ✅ | ❌ |
+| Update assigned tasks | ✅ | ✅ |
+| View assigned projects | ✅ | ✅ |
+| Track task progress | ✅ | ✅ |
 
-### 👤 Member
-- View assigned projects
-- Update assigned tasks
-- Track task progress
+---
 
-## 🚂 Railway Deployment
+## 🚀 Deployment (Railway)
 
-### Deployment Steps
+### Steps
 
-1. Push project to GitHub
-2. Create Railway Project
-3. Add PostgreSQL Database
-4. Configure Environment Variables
-5. Deploy Application
+1. Push the project to GitHub
+2. Create a new Railway project
+3. Add a PostgreSQL database plugin
+4. Set the environment variables below
+5. Deploy
 
-### Required Environment Variables
+### Environment Variables
 
 ```env
 DATABASE_URL=<Railway PostgreSQL URL>
@@ -207,55 +201,33 @@ JWT_SECRET=<your-secret-key>
 PORT=8080
 ```
 
-### Build Command
+### Build & Start Commands
 
 ```bash
+# Build
 npm install && npm run build
-```
 
-### Start Command
-
-```bash
+# Start
 npm start
 ```
 
-## 📸 Application Screenshots
+---
 
-### 🔐 Login Page
+## 📸 Screenshots
 
+### Login Page
 ![Login Page](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/Login.png)
 
-### 📊 Admin Dashboard
+### Admin Dashboard
+![Admin Dashboard](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/Dashboard.png)
 
-![Dashboard](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/Dashboard.png)
-
-### 👥 Member Dashboard
-
+### Member Dashboard
 ![Member Dashboard](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/member.png)
 
-## 🎥 Demo Video
-
-The demo video includes:
-
-- User Authentication
-- Admin Dashboard
-- Project Creation
-- Member Management
-- Task Assignment
-- Task Status Updates
-- Dashboard Overview
-
-## 📋 Submission Checklist
-
-- ✅ Fully Functional Live Application
-- ✅ GitHub Repository
-- ✅ README Documentation
-- ✅ Demo Video
+---
 
 ## 👨‍💻 Developer
 
-### Jabir Imteyaz
-
-B.Tech CSE Student  
-Full Stack Developer
-````
+**Jabir Imteyaz**  
+B.Tech CSE Student · Full Stack Developer  
+[GitHub](https://github.com/Jabir-05)
