@@ -1,4 +1,4 @@
-````md id="u4zqwp"
+````md
 # Team Task Manager 🚀
 
 A full-stack project management web application that allows users to create projects, assign tasks, manage team members, and track progress with secure role-based access control (Admin / Member).
@@ -88,8 +88,8 @@ A full-stack project management web application that allows users to create proj
 ├── prisma
 ├── server
 ├── src
+├── Screenshots
 ├── public
-├── screenshots
 ├── package.json
 └── README.md
 ````
@@ -281,13 +281,13 @@ npm start
 
 ## 🔐 Login Page
 
-![Login Page](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/screenshots/Login.png)
+![Login Page](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/Login.png)
 
 ---
 
 ## 📊 Dashboard
 
-![Dashboard](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/screenshots/Dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/Dashboard.png)
 
 ---
 
