@@ -1,65 +1,52 @@
 ````md
 # Team Task Manager 🚀
 
-A modern full-stack project management application that enables teams to create projects, assign tasks, manage members, and track work progress efficiently using secure role-based access control.
-
----
+A modern full-stack project management application that helps teams create projects, assign tasks, manage members, and track work progress efficiently with secure role-based access control.
 
 ## 🌐 Live Demo
 
-🔗 **Live Application**  
-https://team-task-manager-production-ef81.up.railway.app
+### 🚀 Live Application
+[Open Live Project](https://team-task-manager-production-ef81.up.railway.app)
 
-🔗 **GitHub Repository**  
-https://github.com/Jabir-05/team-task-manager
+### 📂 GitHub Repository
+[View GitHub Repository](https://github.com/Jabir-05/team-task-manager)
 
----
+## ✨ Features
 
-# ✨ Features
-
-## 🔐 Authentication & Authorization
-- Secure Signup & Login system
+### 🔐 Authentication & Authorization
+- Secure Signup & Login System
 - JWT-based Authentication
 - Password Encryption using bcrypt
 - Role-Based Access Control (Admin / Member)
 
----
-
-## 📁 Project Management
+### 📁 Project Management
 - Create and manage projects
 - Add or remove team members
-- Manage project access and responsibilities
+- Manage project responsibilities
+- View project details and members
 
----
-
-## ✅ Task Management
+### ✅ Task Management
 - Create and assign tasks
 - Update task status
 - Track overdue tasks
 - Delete tasks (Admin only)
-- Real-time project workflow tracking
+- Monitor project workflow
 
----
-
-## 📊 Dashboard & Analytics
+### 📊 Dashboard & Analytics
 - Total Tasks Overview
 - Pending Tasks
 - Completed Tasks
 - In Progress Tasks
 - Overdue Task Monitoring
 
----
-
-## 🛡️ Backend & Database
+### 🛡️ Backend & Database
 - RESTful API Architecture
 - Prisma ORM Integration
 - PostgreSQL Database
 - Input Validation using Zod
-- Proper relational data modeling
+- Relational Database Models
 
----
-
-# 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 | Technology | Usage |
 |------------|-------|
@@ -73,9 +60,7 @@ https://github.com/Jabir-05/team-task-manager
 | bcryptjs | Password Hashing |
 | Railway | Deployment |
 
----
-
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```bash
 ├── prisma
@@ -85,30 +70,24 @@ https://github.com/Jabir-05/team-task-manager
 ├── public
 ├── package.json
 └── README.md
-````
+```
 
----
+## ⚙️ Local Setup
 
-# ⚙️ Local Setup
-
-## 1️⃣ Clone Repository
+### 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/Jabir-05/team-task-manager.git
 cd team-task-manager
 ```
 
----
-
-## 2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
----
-
-## 3️⃣ Configure Environment Variables
+### 3️⃣ Configure Environment Variables
 
 Create a `.env` file and add:
 
@@ -118,17 +97,13 @@ JWT_SECRET="your-secret-key"
 PORT=8080
 ```
 
----
-
-## 4️⃣ Start PostgreSQL
+### 4️⃣ Start PostgreSQL
 
 ```bash
 docker compose up -d
 ```
 
----
-
-## 5️⃣ Run Prisma Migrations
+### 5️⃣ Run Prisma Migrations
 
 ```bash
 npm run db:dev
@@ -140,9 +115,7 @@ npm run db:dev
 npm run db:seed
 ```
 
----
-
-## 6️⃣ Start Development Server
+### 6️⃣ Start Development Server
 
 ```bash
 npm run dev
@@ -160,85 +133,65 @@ http://localhost:5173
 http://localhost:8080
 ```
 
----
+## 👨‍💻 Demo Accounts
 
-# 👨‍💻 Demo Accounts
-
-## 🔑 Admin Account
+### 🔑 Admin Account
 
 ```text
 Email: admin@example.com
 Password: Password123!
 ```
 
----
-
-## 👤 Member Account
+### 👤 Member Account
 
 ```text
 Email: member@example.com
 Password: Password123!
 ```
 
----
+## 📡 API Endpoints
 
-# 📡 API Endpoints
+### Authentication
+- `POST /api/auth/signup`
+- `POST /api/auth/login`
 
-## Authentication
+### User
+- `GET /api/me`
+- `GET /api/users`
 
-* `POST /api/auth/signup`
-* `POST /api/auth/login`
+### Dashboard
+- `GET /api/dashboard`
 
-## User
+### Projects
+- `GET /api/projects`
+- `POST /api/projects`
+- `GET /api/projects/:id`
 
-* `GET /api/me`
-* `GET /api/users`
+### Team Members
+- `POST /api/projects/:projectId/members`
 
-## Dashboard
+### Tasks
+- `POST /api/projects/:projectId/tasks`
+- `PATCH /api/tasks/:id`
+- `DELETE /api/tasks/:id`
 
-* `GET /api/dashboard`
+## 🔑 Role Permissions
 
-## Projects
+### 👑 Admin
+- Create projects
+- Manage members
+- Assign tasks
+- Delete tasks
+- Access all project details
 
-* `GET /api/projects`
-* `POST /api/projects`
-* `GET /api/projects/:id`
+### 👤 Member
+- View assigned projects
+- Update assigned tasks
+- Track task progress
 
-## Team Members
+## 🚂 Railway Deployment
 
-* `POST /api/projects/:projectId/members`
-
-## Tasks
-
-* `POST /api/projects/:projectId/tasks`
-* `PATCH /api/tasks/:id`
-* `DELETE /api/tasks/:id`
-
----
-
-# 🔑 Role Permissions
-
-## 👑 Admin
-
-* Create projects
-* Manage members
-* Assign tasks
-* Delete tasks
-* Access all project details
-
----
-
-## 👤 Member
-
-* View assigned projects
-* Update assigned tasks
-* Track task progress
-
----
-
-# 🚂 Railway Deployment
-
-## Deployment Steps
+### Deployment Steps
 
 1. Push project to GitHub
 2. Create Railway Project
@@ -246,9 +199,7 @@ Password: Password123!
 4. Configure Environment Variables
 5. Deploy Application
 
----
-
-## Required Environment Variables
+### Required Environment Variables
 
 ```env
 DATABASE_URL=<Railway PostgreSQL URL>
@@ -256,75 +207,55 @@ JWT_SECRET=<your-secret-key>
 PORT=8080
 ```
 
----
-
-## Build Command
+### Build Command
 
 ```bash
 npm install && npm run build
 ```
 
----
-
-## Start Command
+### Start Command
 
 ```bash
 npm start
 ```
 
----
+## 📸 Application Screenshots
 
-# 📸 Application Screenshots
-
-## 🔐 Login Page
+### 🔐 Login Page
 
 ![Login Page](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/Login.png)
 
----
-
-## 📊 Admin Dashboard
+### 📊 Admin Dashboard
 
 ![Dashboard](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/Dashboard.png)
 
----
-
-## 👥 Member Dashboard
+### 👥 Member Dashboard
 
 ![Member Dashboard](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/member.png)
 
----
-
-# 🎥 Demo Video
+## 🎥 Demo Video
 
 The demo video includes:
 
-* User Authentication
-* Admin Dashboard
-* Project Creation
-* Member Management
-* Task Assignment
-* Task Status Updates
-* Dashboard Overview
+- User Authentication
+- Admin Dashboard
+- Project Creation
+- Member Management
+- Task Assignment
+- Task Status Updates
+- Dashboard Overview
 
----
+## 📋 Submission Checklist
 
-# 📋 Submission Checklist
+- ✅ Fully Functional Live Application
+- ✅ GitHub Repository
+- ✅ README Documentation
+- ✅ Demo Video
 
-* ✅ Fully Functional Live Application
-* ✅ GitHub Repository
-* ✅ Professional README Documentation
-* ✅ Demo Video
+## 👨‍💻 Developer
 
----
+### Jabir Imteyaz
 
-# 👨‍💻 Developer
-
-## Jabir Imteyaz
-
-B.Tech CSE Student
+B.Tech CSE Student  
 Full Stack Developer
-
----
-
-```
-```
+````
