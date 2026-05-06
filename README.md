@@ -1,125 +1,330 @@
-# Team Task Manager
+````md
+# Team Task Manager 🚀
 
-A full-stack project management app for creating projects, managing team members, assigning tasks, and tracking progress with Admin/Member access control.
+A modern full-stack project management application that enables teams to create projects, assign tasks, manage members, and track work progress efficiently using secure role-based access control.
 
-## Features
+---
 
-- Signup and login with JWT authentication
-- Admin and Member roles
-- Project creation and team membership
-- Task creation, assignment, status updates, and overdue tracking
-- Dashboard totals for task status and overdue work
-- REST API with validation and relational database models
-- Railway-ready deployment using PostgreSQL
+## 🌐 Live Demo
 
-## Tech Stack
+🔗 **Live Application**  
+https://team-task-manager-production-ef81.up.railway.app
 
-- React + Vite
-- Node.js + Express
-- Prisma ORM
-- PostgreSQL
-- JWT + bcrypt
-- Zod validation
+🔗 **GitHub Repository**  
+https://github.com/Jabir-05/team-task-manager
 
-## Local Setup
+---
 
-1. Install dependencies:
+# ✨ Features
+
+## 🔐 Authentication & Authorization
+- Secure Signup & Login system
+- JWT-based Authentication
+- Password Encryption using bcrypt
+- Role-Based Access Control (Admin / Member)
+
+---
+
+## 📁 Project Management
+- Create and manage projects
+- Add or remove team members
+- Manage project access and responsibilities
+
+---
+
+## ✅ Task Management
+- Create and assign tasks
+- Update task status
+- Track overdue tasks
+- Delete tasks (Admin only)
+- Real-time project workflow tracking
+
+---
+
+## 📊 Dashboard & Analytics
+- Total Tasks Overview
+- Pending Tasks
+- Completed Tasks
+- In Progress Tasks
+- Overdue Task Monitoring
+
+---
+
+## 🛡️ Backend & Database
+- RESTful API Architecture
+- Prisma ORM Integration
+- PostgreSQL Database
+- Input Validation using Zod
+- Proper relational data modeling
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| React.js | Frontend UI |
+| Vite | Frontend Build Tool |
+| Node.js | Backend Runtime |
+| Express.js | Backend Framework |
+| Prisma ORM | Database ORM |
+| PostgreSQL | Database |
+| JWT | Authentication |
+| bcryptjs | Password Hashing |
+| Railway | Deployment |
+
+---
+
+# 📂 Project Structure
+
+```bash
+├── prisma
+├── server
+├── src
+├── Screenshots
+├── public
+├── package.json
+└── README.md
+````
+
+---
+
+# ⚙️ Local Setup
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/Jabir-05/team-task-manager.git
+cd team-task-manager
+```
+
+---
+
+## 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-2. Create `.env` from `.env.example` and set:
+---
 
-```bash
+## 3️⃣ Configure Environment Variables
+
+Create a `.env` file and add:
+
+```env
 DATABASE_URL="postgresql://taskmanager:taskmanager@localhost:5432/team_task_manager?schema=public"
-JWT_SECRET="replace-with-a-long-random-secret"
+JWT_SECRET="your-secret-key"
 PORT=8080
 ```
 
-3. Start PostgreSQL locally:
+---
+
+## 4️⃣ Start PostgreSQL
 
 ```bash
 docker compose up -d
 ```
 
-4. Run migrations and optional seed data:
+---
+
+## 5️⃣ Run Prisma Migrations
 
 ```bash
 npm run db:dev
+```
+
+### Optional Seed Data
+
+```bash
 npm run db:seed
 ```
 
-5. Start the app:
+---
+
+## 6️⃣ Start Development Server
 
 ```bash
 npm run dev
 ```
 
-Open the development app at `http://localhost:5173`. The Vite dev server proxies `/api` requests to Express on `http://localhost:8080`.
+### Frontend URL
 
-For a production-style local run:
-
-```bash
-npm run build
-npm start
+```text
+http://localhost:5173
 ```
 
-Then open `http://localhost:8080`.
+### Backend URL
 
-## Demo Accounts
-
-After running the seed script:
-
-- Admin: `admin@example.com`
-- Member: `member@example.com`
-- Password: `Password123!`
-
-## API Overview
-
-- `POST /api/auth/signup`
-- `POST /api/auth/login`
-- `GET /api/me`
-- `GET /api/dashboard`
-- `GET /api/users`
-- `GET /api/projects`
-- `POST /api/projects`
-- `GET /api/projects/:id`
-- `POST /api/projects/:projectId/members`
-- `POST /api/projects/:projectId/tasks`
-- `PATCH /api/tasks/:id`
-- `DELETE /api/tasks/:id`
-
-## Role Rules
-
-- Global Admins can create projects, manage team members, create tasks, assign tasks, and delete tasks.
-- Project Admins can manage members and tasks for their project.
-- Members can view projects they belong to and update the status of tasks assigned to them.
-- The first registered user is automatically promoted to Admin; later signups start as Members.
-
-## Railway Deployment
-
-1. Push this repository to GitHub.
-2. Create a new Railway project from the GitHub repo.
-3. Add a Railway PostgreSQL database.
-4. Set environment variables:
-
-```bash
-DATABASE_URL=<Railway Postgres connection URL>
-JWT_SECRET=<long random secret>
+```text
+http://localhost:8080
 ```
 
-5. Deploy. Railway will run:
+---
+
+# 👨‍💻 Demo Accounts
+
+## 🔑 Admin Account
+
+```text
+Email: admin@example.com
+Password: Password123!
+```
+
+---
+
+## 👤 Member Account
+
+```text
+Email: member@example.com
+Password: Password123!
+```
+
+---
+
+# 📡 API Endpoints
+
+## Authentication
+
+* `POST /api/auth/signup`
+* `POST /api/auth/login`
+
+## User
+
+* `GET /api/me`
+* `GET /api/users`
+
+## Dashboard
+
+* `GET /api/dashboard`
+
+## Projects
+
+* `GET /api/projects`
+* `POST /api/projects`
+* `GET /api/projects/:id`
+
+## Team Members
+
+* `POST /api/projects/:projectId/members`
+
+## Tasks
+
+* `POST /api/projects/:projectId/tasks`
+* `PATCH /api/tasks/:id`
+* `DELETE /api/tasks/:id`
+
+---
+
+# 🔑 Role Permissions
+
+## 👑 Admin
+
+* Create projects
+* Manage members
+* Assign tasks
+* Delete tasks
+* Access all project details
+
+---
+
+## 👤 Member
+
+* View assigned projects
+* Update assigned tasks
+* Track task progress
+
+---
+
+# 🚂 Railway Deployment
+
+## Deployment Steps
+
+1. Push project to GitHub
+2. Create Railway Project
+3. Add PostgreSQL Database
+4. Configure Environment Variables
+5. Deploy Application
+
+---
+
+## Required Environment Variables
+
+```env
+DATABASE_URL=<Railway PostgreSQL URL>
+JWT_SECRET=<your-secret-key>
+PORT=8080
+```
+
+---
+
+## Build Command
 
 ```bash
 npm install && npm run build
-npm run db:migrate && npm start
 ```
 
-## Submission Checklist
+---
 
-- Live URL: add your Railway app URL here
-- GitHub repo: add your repository URL here
-- README: included
-- Demo video: record a 2-5 minute walkthrough covering signup/login, admin project creation, team member assignment, task assignment, member status update, and dashboard/overdue view
-# team-task-manager
+## Start Command
+
+```bash
+npm start
+```
+
+---
+
+# 📸 Application Screenshots
+
+## 🔐 Login Page
+
+![Login Page](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/Login.png)
+
+---
+
+## 📊 Admin Dashboard
+
+![Dashboard](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/Dashboard.png)
+
+---
+
+## 👥 Member Dashboard
+
+![Member Dashboard](https://raw.githubusercontent.com/Jabir-05/team-task-manager/main/Screenshots/member.png)
+
+---
+
+# 🎥 Demo Video
+
+The demo video includes:
+
+* User Authentication
+* Admin Dashboard
+* Project Creation
+* Member Management
+* Task Assignment
+* Task Status Updates
+* Dashboard Overview
+
+---
+
+# 📋 Submission Checklist
+
+* ✅ Fully Functional Live Application
+* ✅ GitHub Repository
+* ✅ Professional README Documentation
+* ✅ Demo Video
+
+---
+
+# 👨‍💻 Developer
+
+## Jabir Imteyaz
+
+B.Tech CSE Student
+Full Stack Developer
+
+---
+
+```
+```
